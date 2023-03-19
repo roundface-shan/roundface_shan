@@ -1,0 +1,56 @@
+.rf-form {
+    .rf-row { 
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+      &.rf-row-no-label {
+        flex-direction: row-reverse;
+      }
+      .rf-form-item-label {
+        flex-basis: 30%;
+        text-align: right;
+        padding-right: 20px;
+        >label {
+          margin-bottom: 0;
+        }
+        >label.rf-form-item-required:before {
+          display: inline-block;
+          margin-right: 4px;
+          color: $danger;
+          font-size: 14px;
+          font-family: SimSun,sans-serif;
+          line-height: 1;
+          content: "*";
+        }
+      }
+      .rf-form-item { 
+        flex-basis: 70%;
+        position: relative;
+        .rf-input-wrapper {
+          margin-bottom: 0;
+        }
+        .rf-form-item-has-error.rf-form-item-control {
+          .rf-input-inner {
+            border: 1px solid $danger;
+            &:focus {
+              box-shadow: $input-focus-box-shadow-error;
+            }
+          }  
+        }
+        .rf-form-item-explain {
+          position: absolute;
+          bottom: -25px;
+          left: 0;
+          line-height: 25px;
+          color: $danger;
+          min-width: 100px;
+        }
+      }
+    }
+    .rf-form-submit-area { 
+      display: flex;
+      align-items: center;
+      justify-content: center;  
+    }
+  
+  }
