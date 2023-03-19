@@ -17,4 +17,4 @@
       "src/**/*.stories.tsx",
       "src/setupTests.ts",
     ]
-  }
+}
