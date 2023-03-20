@@ -39,7 +39,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run clean && npm run build-ts && npm run build-css",
+    "build": "npm run clean && npm run build-es",
     "clean": "rimraf ./dist",
     "lint": "eslint --ext js,ts,tsx src --ignore-pattern *.test.tsx",
     "test": "react-scripts test",
@@ -49,7 +49,8 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-css": "sass ./src/style/index.scss ./dist/index.css",
     "build-storybook": "build-storybook -s public",
-    "prepublish": " npm run test:onece && npm run lint && npm run build"
+    "prepublish": " npm run test:onece && npm run lint && npm run build",
+    "build-es": "rollup --config rollup/rollup.esm.config.js"
   },
   "eslintConfig": {
     "extends": [
@@ -83,6 +84,9 @@
     "@babel/cli": "^7.21.0",
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
@@ -111,6 +115,8 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "rimraf": "^4.4.0",
+    "rollup-plugin-sass": "^1.12.19",
+    "rollup-plugin-typescript2": "^0.34.1",
     "sass": "^1.58.1",
     "typescript": "^4.9.5",
     "webpack": "^5.75.0"

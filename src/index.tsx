@@ -1,6 +1,6 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
-
+import './style/index.scss'
 library.add(fas)
 
 export { default as Button } from './components/Button'
