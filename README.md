@@ -6,4 +6,4 @@ I made a lot of references to vikingship, AntD and other similar components to b
 
 ## Here is the documentation and usage instructions for the project
 
-（https://roundface-shan.github.io/roundface_shan/storybook-static/index.html）
+https://roundface-shan.github.io/roundface_shan/storybook-static/index.html
