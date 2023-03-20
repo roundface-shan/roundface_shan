@@ -1,12 +1,12 @@
 {
   "name": "roundface_shan",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "private": false,
-  "description": "React components library", 
-  "author": "lice", 
-  "main": "dist/index.js", 
-  "module": "dist/index.js", 
-  "types": "dist/index.d.ts", 
+  "description": "React components library",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "lice",
   "license": "MIT",
   "keywords": [
     "component",
@@ -19,41 +19,37 @@
     "type": "git",
     "url": "https://github.com/roundface-shan/roundface_shan"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.12",
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
-    "@types/react-transition-group": "^4.4.5",
-    "async-validator": "^4.2.5",
     "axios": "^1.3.4",
     "babel-plugin-macros": "^3.1.0",
     "classnames": "^2.3.2",
     "lodash": "^4.17.21",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
     "react-transition-group": "^4.4.5",
-    "sass": "^1.58.1",
-    "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
+  },
+  "peerDependencies": {
+    "react": ">= 18.2.0",
+    "react-dom": ">= 18.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "npm run clean && npm run build-ts && npm run build-css",
-    "clean": "rimraf ./dist", 
+    "clean": "rimraf ./dist",
+    "lint": "eslint --ext js,ts,tsx src --ignore-pattern *.test.tsx",
     "test": "react-scripts test",
+    "test:onece": "cross-env CI=true react-scripts test",
     "build-ts": "tsc -p tsconfig.build.json",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-css": "sass ./src/style/index.scss ./dist/index.css",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "prepublish": " npm run test:onece && npm run lint && npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -97,11 +93,26 @@
     "@storybook/preset-create-react-app": "^4.1.2",
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.12",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@types/react-transition-group": "^4.4.5",
     "@types/webpack": "^5.28.0",
+    "async-validator": "^4.2.5",
     "babel-jest": "^29.5.0",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "cross-env": "^7.0.3",
     "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
     "rimraf": "^4.4.0",
+    "sass": "^1.58.1",
+    "typescript": "^4.9.5",
     "webpack": "^5.75.0"
   }
 }
